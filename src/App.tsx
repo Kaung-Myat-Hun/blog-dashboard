@@ -5,8 +5,6 @@ import "./App.css";
 import View from "./routes";
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return <View></View>;
 }
 
