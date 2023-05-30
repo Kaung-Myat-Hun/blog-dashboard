@@ -7,7 +7,7 @@ function AdminLayout() {
   const navigate = useNavigate();
   useEffect(() => {
     const role = localStorage.getItem(btoa("role"));
-    console.log("reload");
+
     if (atob(role) !== "admin") {
       navigate("/", { replace: true });
     }

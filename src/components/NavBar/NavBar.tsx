@@ -1,9 +1,12 @@
-import React from 'react'
+import React from "react";
+import { LogoutHandler } from "../../services/LogoutHandler";
 
 function NavBar() {
   return (
-    <div>NavBar</div>
-  )
+    <div>
+      <button onClick={LogoutHandler}>Logout</button>
+    </div>
+  );
 }
 
-export default NavBar
+export default NavBar;
