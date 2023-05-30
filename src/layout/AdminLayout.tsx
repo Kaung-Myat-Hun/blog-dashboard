@@ -13,6 +13,7 @@ function AdminLayout() {
     }
   }, []);
 
+  console.log(React);
   return (
     <>
       <NavBar></NavBar>
