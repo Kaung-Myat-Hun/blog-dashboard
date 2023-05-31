@@ -3,6 +3,7 @@ import NavBar from "../components/NavBar/NavBar";
 import Footer from "../components/Footer/Footer";
 import { useNavigate } from "react-router-dom";
 import { dataFetching } from "../services/ApiServices";
+import AdminRoute from "./auth_routes/AdminRoutes";
 
 function AdminLayout() {
   const navigate = useNavigate();
@@ -20,7 +21,7 @@ function AdminLayout() {
   return (
     <>
       <NavBar></NavBar>
-      <div>AdminLayout</div>
+      <AdminRoute></AdminRoute>
       <Footer></Footer>
     </>
   );
