@@ -4,6 +4,7 @@ import Footer from "../components/Footer/Footer";
 import { useNavigate } from "react-router-dom";
 import { dataFetching } from "../services/ApiServices";
 import AdminRoute from "./auth_routes/AdminRoutes";
+import SideMenu from "../components/SideMenu/SideMenu";
 
 function AdminLayout() {
   const navigate = useNavigate();
@@ -21,7 +22,10 @@ function AdminLayout() {
   return (
     <>
       <NavBar></NavBar>
-      <AdminRoute></AdminRoute>
+      <div className="flex">
+        <SideMenu></SideMenu>
+        <AdminRoute></AdminRoute>
+      </div>
       <Footer></Footer>
     </>
   );

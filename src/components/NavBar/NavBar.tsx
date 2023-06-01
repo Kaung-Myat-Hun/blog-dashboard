@@ -13,7 +13,7 @@ function NavBar() {
   }, []);
 
   return (
-    <div className="flex justify-around">
+    <div className="flex justify-between ">
       {admin ? <p>admin</p> : <p>co-op</p>}
       <button onClick={LogoutHandler}>Logout</button>
     </div>

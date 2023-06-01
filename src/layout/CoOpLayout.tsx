@@ -3,6 +3,7 @@ import NavBar from "../components/NavBar/NavBar";
 import Footer from "../components/Footer/Footer";
 import { useNavigate } from "react-router-dom";
 import CoOpRoute from "./auth_routes/CoOpRoutes";
+import SideMenu from "../components/SideMenu/SideMenu";
 
 function CoOpLayout() {
   const navigate = useNavigate();
@@ -15,6 +16,7 @@ function CoOpLayout() {
   return (
     <>
       <NavBar></NavBar>
+      <SideMenu></SideMenu>
       <CoOpRoute></CoOpRoute>
       <Footer></Footer>
     </>
