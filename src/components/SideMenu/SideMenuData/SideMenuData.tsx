@@ -1,7 +1,45 @@
-import React from "react";
+export const adminSideMenuData = [
+  {
+    name: "Dashboard",
+    route: "/dashboard/home",
+    child: [],
+  },
+  {
+    name: "Table",
+    route: "/dashboard/table",
+    child: [],
+  },
+  {
+    name: "Data",
+    route: "/dashboard/data",
+    child: [],
+  },
+  {
+    name: "Contact",
+    route: "/dashboard/contact",
+    child: [],
+  },
+];
 
-function SideMenuData() {
-  return <div>SideMenuData</div>;
-}
-
-export default SideMenuData;
+export const coopSideMenuData = [
+  {
+    name: "Dashboard",
+    route: "/dashboard/home",
+    child: [],
+  },
+  {
+    name: "Table",
+    route: "/dashboard/table",
+    child: [],
+  },
+  {
+    name: "Data",
+    route: "/dashboard/data",
+    child: [],
+  },
+  {
+    name: "Contact",
+    route: "/dashboard/contact",
+    child: [],
+  },
+];

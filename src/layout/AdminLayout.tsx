@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import NavBar from "../components/NavBar/NavBar";
 import Footer from "../components/Footer/Footer";
 import { useNavigate } from "react-router-dom";
@@ -19,11 +19,13 @@ function AdminLayout() {
     }
   }, []);
 
+  const [open, setOpen] = useState(true);
+
   return (
     <>
-      <NavBar></NavBar>
+      <NavBar setOpen={setOpen} open={open}></NavBar>
       <div className="flex">
-        <SideMenu></SideMenu>
+        <SideMenu open={open}></SideMenu>
         <AdminRoute></AdminRoute>
       </div>
       <Footer></Footer>
