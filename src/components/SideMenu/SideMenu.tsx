@@ -25,14 +25,14 @@ function SideMenu({ open }) {
   return (
     <div
       style={{
-        width: `${open ? "18rem" : "0px"}`,
+        width: `${open ? "18rem" : "0rem"}`,
         height: "93vh",
         overFlowY: "scroll",
-        display: `${open ? "block" : "none"}`,
+        backgroundColor: "#7f7f7f",
       }}
     >
       {admin ? (
-        <ul>
+        <ul style={{ display: `${open ? "block" : "none"}`, color: "#000" }}>
           {adminSideMenuData.map((item, index) => (
             <li key={index}>
               <p

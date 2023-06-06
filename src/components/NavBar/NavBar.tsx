@@ -17,8 +17,12 @@ function NavBar({ setOpen, open }) {
   };
   return (
     <div className="flex justify-between ">
-      {admin ? <p>admin</p> : <p>co-op</p>}
-      <button onClick={openHandler}>Drawer</button>
+      <div style={{ display: "flex" }}>
+        {admin ? <p>admin</p> : <p>co-op</p>}
+        <button onClick={openHandler} className={`px-4`}>
+          Drawer
+        </button>
+      </div>
       <button onClick={LogoutHandler}>Logout</button>
     </div>
   );
