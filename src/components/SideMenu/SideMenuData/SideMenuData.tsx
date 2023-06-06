@@ -1,22 +1,25 @@
 export const adminSideMenuData = [
   {
     name: "Dashboard",
-    route: "/dashboard/home",
+    route: "admin/dashboard/home",
     child: [],
   },
   {
     name: "Table",
-    route: "/dashboard/table",
-    child: [],
+    route: "admin/dashboard/table",
+    child: [
+      { name: "Table One", route: "admin/dashboard/table/one", child: [] },
+      { name: "Table Two", route: "admin/dashboard/table/two", child: [] },
+    ],
   },
   {
     name: "Data",
-    route: "/dashboard/data",
+    route: "admin/dashboard/data",
     child: [],
   },
   {
     name: "Contact",
-    route: "/dashboard/contact",
+    route: "admin/dashboard/contact",
     child: [],
   },
 ];
@@ -24,22 +27,25 @@ export const adminSideMenuData = [
 export const coopSideMenuData = [
   {
     name: "Dashboard",
-    route: "/dashboard/home",
+    route: "coop/dashboard/home",
     child: [],
   },
   {
     name: "Table",
-    route: "/dashboard/table",
-    child: [],
+    route: "coop/dashboard/table",
+    child: [
+      { name: "Table One", route: "coop/dashboard/table/one", child: [] },
+      { name: "Table Two", route: "coop/dashboard/table/two", child: [] },
+    ],
   },
   {
     name: "Data",
-    route: "/dashboard/data",
+    route: "coop/dashboard/data",
     child: [],
   },
   {
     name: "Contact",
-    route: "/dashboard/contact",
+    route: "coop/dashboard/contact",
     child: [],
   },
 ];

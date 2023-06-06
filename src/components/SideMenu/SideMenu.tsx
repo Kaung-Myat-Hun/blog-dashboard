@@ -1,24 +1,106 @@
 import React, { useEffect, useState } from "react";
+import {
+  adminSideMenuData,
+  coopSideMenuData,
+} from "./SideMenuData/SideMenuData";
 
 function SideMenu({ open }) {
   const [admin, setAdmin] = useState(false);
+  const role = localStorage.getItem(btoa("role"));
   useEffect(() => {
-    const role = localStorage.getItem(btoa("role"));
     if (atob(role) === "admin") {
       setAdmin(true);
     } else {
       setAdmin(false);
     }
   }, []);
+
+  const [expand, setExpand] = useState(false);
+
+  const expandHandler = (e: any) => {
+    e.preventDefault();
+    setExpand(!expand);
+  };
+
   return (
     <div
       style={{
         width: `${open ? "18rem" : "0px"}`,
-        background: "aqua",
+        height: "93vh",
+        overFlowY: "scroll",
         display: `${open ? "block" : "none"}`,
       }}
     >
-      {admin ? <div>Admin Side Menu</div> : <div>CoOp Side Menu</div>}
+      {admin ? (
+        <ul>
+          {adminSideMenuData.map((item, index) => (
+            <li key={index}>
+              <p
+                onClick={
+                  item.child.length > 0
+                    ? expandHandler
+                    : () => {
+                        window.location.assign(item.route);
+                      }
+                }
+                // onClick={item.child.length > 0 ? expandHandler : routeHandler}
+              >
+                {item.name}
+              </p>
+              {item.child.length > 0 ? (
+                <li style={{ display: `${expand ? "block" : "none"}` }}>
+                  {item.child.map((cItem, index) => (
+                    <p
+                      key={index}
+                      onClick={() => {
+                        window.location.assign(cItem.route);
+                      }}
+                    >
+                      {cItem.name}
+                    </p>
+                  ))}
+                </li>
+              ) : (
+                <></>
+              )}
+            </li>
+          ))}
+        </ul>
+      ) : (
+        <ul>
+          {coopSideMenuData.map((item, index) => (
+            <li key={index}>
+              <p
+                onClick={
+                  item.child.length > 0
+                    ? expandHandler
+                    : () => {
+                        window.location.assign(item.route);
+                      }
+                }
+              >
+                {item.name}
+              </p>
+              {item.child.length > 0 ? (
+                <li>
+                  {item.child.map((cItem, index) => (
+                    <p
+                      key={index}
+                      onClick={() => {
+                        window.location.assign(cItem.route);
+                      }}
+                    >
+                      {cItem.name}
+                    </p>
+                  ))}
+                </li>
+              ) : (
+                <></>
+              )}
+            </li>
+          ))}
+        </ul>
+      )}
     </div>
   );
 }

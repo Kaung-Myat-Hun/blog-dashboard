@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import NavBar from "../components/NavBar/NavBar";
 import Footer from "../components/Footer/Footer";
 import { useNavigate } from "react-router-dom";
@@ -13,11 +13,15 @@ function CoOpLayout() {
       navigate("/", { replace: true });
     }
   }, []);
+
+  const [open, setOpen] = useState(true);
   return (
     <>
-      <NavBar></NavBar>
-      <SideMenu></SideMenu>
-      <CoOpRoute></CoOpRoute>
+      <NavBar setOpen={setOpen} open={open}></NavBar>
+      <div className="flex">
+        <SideMenu open={open}></SideMenu>
+        <CoOpRoute></CoOpRoute>
+      </div>
       <Footer></Footer>
     </>
   );
