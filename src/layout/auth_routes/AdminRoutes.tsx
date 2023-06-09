@@ -5,12 +5,7 @@ import HomePage from "../../pages/home/HomePage";
 function AdminRoutes() {
   return (
     <Routes>
-      <Route
-        exact
-        index
-        path="/admin/dashboard/home"
-        element={<HomePage />}
-      ></Route>
+      <Route exact path="admin/dashboard/home" element={<HomePage />}></Route>
     </Routes>
   );
 }

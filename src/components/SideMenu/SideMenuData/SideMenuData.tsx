@@ -1,25 +1,25 @@
 export const adminSideMenuData = [
   {
     name: "Dashboard",
-    route: "admin/dashboard/home",
+    route: "/dashboard/home",
     child: [],
   },
   {
     name: "Table",
-    route: "admin/dashboard/table",
+    route: "/dashboard/table",
     child: [
-      { name: "Table One", route: "admin/dashboard/table/one", child: [] },
-      { name: "Table Two", route: "admin/dashboard/table/two", child: [] },
+      { name: "Table One", route: "/dashboard/table/one", child: [] },
+      { name: "Table Two", route: "/dashboard/table/two", child: [] },
     ],
   },
   {
     name: "Data",
-    route: "admin/dashboard/data",
+    route: "/dashboard/data",
     child: [],
   },
   {
     name: "Contact",
-    route: "admin/dashboard/contact",
+    route: "/dashboard/contact",
     child: [],
   },
 ];

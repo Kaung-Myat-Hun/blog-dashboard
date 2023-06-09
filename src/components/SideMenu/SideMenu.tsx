@@ -40,7 +40,7 @@ function SideMenu({ open }) {
                   item.child.length > 0
                     ? expandHandler
                     : () => {
-                        window.location.assign(item.route);
+                        window.location.assign("admin" + item.route);
                       }
                 }
                 // onClick={item.child.length > 0 ? expandHandler : routeHandler}

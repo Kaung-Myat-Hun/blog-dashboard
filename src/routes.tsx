@@ -7,9 +7,9 @@ import CoOpLayout from "./layout/CoOpLayout";
 function View() {
   return (
     <Routes>
-      <Route path="/" exact index element={<Login />}></Route>
-      <Route path="/admin" exact element={<AdminLayout />} />
-      <Route path="/coop" exact element={<CoOpLayout />} />
+      <Route path="/" element={<Login />}></Route>
+      <Route path="/admin" element={<AdminLayout />} />
+      <Route path="/coop" element={<CoOpLayout />} />
     </Routes>
   );
 }
