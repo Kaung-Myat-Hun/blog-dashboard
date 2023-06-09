@@ -5,7 +5,6 @@ import { useNavigate } from "react-router-dom";
 import { dataFetching } from "../services/ApiServices";
 import AdminRoute from "./auth_routes/AdminRoutes";
 import SideMenu from "../components/SideMenu/SideMenu";
-import { BrowserRouter } from "react-router-dom";
 
 function AdminLayout() {
   const navigate = useNavigate();

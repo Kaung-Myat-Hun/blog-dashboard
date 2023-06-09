@@ -1,13 +1,54 @@
-import React from "react";
+import React, { Suspense } from "react";
 import { Routes, Route } from "react-router-dom";
-import HomePage from "../../pages/home/HomePage";
+import routes from "../../routes";
+
+const loading = (
+  <div className="pt-3 text-center">
+    <div className="sk-spinner sk-spinner-pulse">Loading</div>
+  </div>
+);
 
 function AdminRoutes() {
   return (
-    <Routes>
-      <Route exact path="admin/dashboard/home" element={<HomePage />}></Route>
-    </Routes>
+    <Suspense fallback={loading}>
+      <Routes>
+        {routes.map((route, idx) => {
+          return (
+            route.element && (
+              <Route
+                key={idx}
+                path={route.path}
+                exact={route.exact}
+                name={route.name}
+                element={<route.element />}
+              />
+            )
+          );
+        })}
+      </Routes>
+    </Suspense>
   );
 }
 
-export default AdminRoutes;
+export default React.memo(AdminRoutes);
+
+{
+  /* <Suspense fallback={<CSpinner color="primary" />}>
+        <Routes>
+          {routes.map((route, idx) => {
+            return (
+              route.element && (
+                <Route
+                  key={idx}
+                  path={route.path}
+                  exact={route.exact}
+                  name={route.name}
+                  element={<route.element />}
+                />
+              )
+            )
+          })}
+          <Route path="/" element={<Navigate to="dashboard" replace />} />
+        </Routes>
+      </Suspense> */
+}
